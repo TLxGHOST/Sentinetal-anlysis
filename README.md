@@ -19,7 +19,7 @@ ml-project
 
 1. **Clone the repository**:
    ```
-   git clone <repository-url>
+   git clone [<repository-url>](https://github.com/TLxGHOST/Sentinetal-anlysis)
    cd ml-project
    ```
 
