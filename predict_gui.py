@@ -8,8 +8,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 # Load saved model and tokenizer
 
 #model path me apne fine tuned model ka name dalna aur uske corresponding pickle file ka name bhi dalna
-MODEL_PATH = "model_1.h5"
-TOKENIZER_PATH = "tokenizer.pkl"
+MODEL_PATH = "sentiment_model_v1.h5"
+TOKENIZER_PATH = "tokenizer_v1.pkl"
 
 model = tf.keras.models.load_model(MODEL_PATH)
 with open(TOKENIZER_PATH, "rb") as handle:
@@ -31,7 +31,7 @@ def predict_text():
     processed_input = process_input(user_input)
     prediction = model.predict(processed_input)[0][0]  # Get single prediction
 
-    sentiment = "Positive 😊" if prediction >= 0.5 else "Negative 😞"
+    sentiment = "Negative 😞" if prediction >= 0.5 else "Positive 😊"
     result_label.config(text=f"Prediction: {sentiment} ({prediction:.2f})")
 
 # GUI Setup
